@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2015 EINSATZKOMPONENTE.DE. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+-->
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>mod_eiko_slider</name>
+	<author>Ralf Meyer</author>
+	<creationDate>January 2015</creationDate>
+	<copyright>Copyright (c) 2015 EINSATZKOMPONENTE.DE. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
+	<authorUrl>einsatzkomponente.de</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>Imageslider_Modul für J3.x</b></span><br/><br/><span style="font-size:10px;"></span>Das Modul zur Anzeige der letzten X Einsätze aus der Einsatzkomponente für J3<br/><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="http://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
+	]]></description>
+
+	<files>
+		<filename module="mod_eiko_slider">mod_eiko_slider.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">  
+			
+			
+							
+			<field name="orga" type="sql" class="inputbox"
+            label="Filter Organisation :"
+            description="Hier können Sie die Anzeige nach Organisationen filtern" 
+            query="SELECT 0 AS `id`,  '-- alle anzeigen --' AS `name` UNION SELECT `name`, `name` FROM `#__eiko_organisationen` WHERE `state`='1' ORDER BY `name` ASC" 
+			key_field="name" 
+			value_field="name"
+			/> 
+				<field
+					name="jquery"
+					type="radio"
+					class="btn-group"
+					label="JQUERY in das Template laden ?"
+					description="Bitte nur aktivieren, wenn vom Template kein JQuery geladen wird.">
+					default="1">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="direction"
+					type="radio"
+					class="btn-group"
+					default="vertical"
+					label="Slider-Richtung"
+					description="">
+					<option
+						value="vertical">Vertikal</option>
+					<option
+						value="horizontal">Horizontal</option>
+				</field>
+				<field
+					name="auto"
+					type="radio"
+					class="btn-group"
+					default="true"
+					label="Auto-Start ?"
+					description="">
+					<option
+						value="true">Ja</option>
+					<option
+						value="false">Nein</option>
+				</field>
+				<field
+					name="caption"
+					type="radio"
+					class="btn-group"
+					default="true"
+					label="Caption anzeigen ?"
+					description="">
+					<option
+						value="true">Ja</option>
+					<option
+						value="false">Nein</option>
+				</field>
+				<field
+					name="controls"
+					type="radio"
+					class="btn-group"
+					default="false"
+					label="Nav-Pfeile anzeigen ?"
+					description="">
+					<option
+						value="true">Ja</option>
+					<option
+						value="false">Nein</option>
+				</field>
+				<field
+					name="slideWidth"
+					type="text"
+					default="800"
+					label="Max-Breite des Sliders (in px) ?"
+					description="" />
+				<field
+					name="count"
+					type="text"
+					default="6"
+					label="Wieviele Bilder sollen in den Slider geladen werden ?"
+					description="" />
+				<field
+					name="num_of_images"
+					type="text"
+					default="3"
+					label="Wieviele Bilder sollen in dem Slider dargestellt werden ?"
+					description="" /> 
+				<field
+					name="moveSlides"
+					type="text"
+					default="1"
+					label="Wieviel Bilder sollen pro Slide gewechselt werden ?"
+					description="" />
+					
+				<field
+					name="char_summary"
+					type="text"
+					default="30"
+					label="Anzahl max. Zeichen Kurz-Bericht :"
+					description="" />
+		
+		
+	<field
+					name="css"
+					type="textarea" rows="10"
+					label="CSS-Style"
+					default=""
+					description="Anpassen des CSS-Style" />
+					
+		
+				
+<field name="mymenuitem" type="menuitem" default="" label="Menüeintrag für die Einsatzübersicht" description="Wenn kein default-Layout benutzt wird, bitte unbedingt den Menüeintrag für die Einsatzübersicht hier festlegen" />
+				
+				<field name="backgroundimage" type="media"
+					label="Backgound Image" description="" />
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
