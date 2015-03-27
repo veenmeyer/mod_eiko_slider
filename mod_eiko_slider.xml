@@ -13,7 +13,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>einsatzkomponente.de</authorUrl>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>Imageslider_Modul für J3.x</b></span><br/><br/><span style="font-size:10px;"></span>Das Modul zur Anzeige der letzten X Einsätze aus der Einsatzkomponente für J3<br/><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="http://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
 	]]></description>
 
@@ -33,8 +33,8 @@
 			<field name="orga" type="sql" class="inputbox"
             label="Filter Organisation :"
             description="Hier können Sie die Anzeige nach Organisationen filtern" 
-            query="SELECT 0 AS `id`,  '-- alle anzeigen --' AS `name` UNION SELECT `name`, `name` FROM `#__eiko_organisationen` WHERE `state`='1' ORDER BY `name` ASC" 
-			key_field="name" 
+            query="SELECT 0 AS `id`,  '-- alle anzeigen --' AS `name` UNION SELECT `id`, `name` FROM `#__eiko_organisationen` WHERE `state`='1' ORDER BY `name` ASC" 
+			key_field="id" 
 			value_field="name"
 			/> 
 				<field
