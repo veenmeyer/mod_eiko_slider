@@ -24,7 +24,6 @@ $zufall 			= rand(1,100000);
 $moduleclass_sfx 	= $params->get('moduleclass_sfx');
 $mymenuitem 		= $params->get('mymenuitem'); // Menü-Eintrag
 $orga 				= $params->get('orga');
-
  ?>
 <style>
 ul.bxslider<?php echo $zufall;?> > li:before {
@@ -55,7 +54,7 @@ ul.bxslider<?php echo $zufall;?> img {
 <style type="text/css"><?php echo $params->get('css');?></style>
 
 <?php
-if ($orga == '-- alle anzeigen --') :
+if ($orga == '0') :
 		// Funktion : letze x Einsatzdaten laden
 		$query = 'SELECT r.id,r.image as foto,rd.marker,r.address,r.summary,r.auswahl_orga,r.desc,r.date1,r.data1,r.counter,r.alerting,r.presse,re.image,rd.list_icon,r.state,rd.title as einsatzart FROM #__eiko_einsatzberichte r JOIN #__eiko_einsatzarten rd ON r.data1 = rd.id LEFT JOIN #__eiko_alarmierungsarten re ON re.id = r.alerting WHERE r.state = "1" and rd.state = "1" and re.state = "1" and r.image <> "" ORDER BY r.date1 DESC LIMIT '.$params->get('count').' ' ;
 		$db	= JFactory::getDBO();
