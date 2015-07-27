@@ -8,12 +8,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>mod_eiko_slider</name>
 	<author>Ralf Meyer</author>
-	<creationDate>29.03.15</creationDate>
+	<creationDate>27.07.15</creationDate>
 	<copyright>Copyright (c) 2015 EINSATZKOMPONENTE.DE. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>einsatzkomponente.de</authorUrl>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>Imageslider_Modul für J3.x</b></span><br/><br/><span style="font-size:10px;"></span>Das Modul zur Anzeige der letzten X Einsätze aus der Einsatzkomponente für J3<br/><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="http://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
 	]]></description>
 
@@ -73,6 +73,18 @@
 					<option
 						value="false">Nein</option>
 				</field>
+				<field
+					name="pause"
+					type="text"
+					default="4000"
+					label="Pause (bei auto) (in ms) ?"
+					description="" />
+				<field
+					name="speed"
+					type="text"
+					default="500"
+					label="Scrollspeed (bei auto) (in ms) ?"
+					description="" />
 				<field
 					name="caption"
 					type="radio"

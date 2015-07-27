@@ -114,6 +114,8 @@ jQuery(document).ready(function () {
             slideMargin: 5,
             infiniteLoop: true,
 			slideWidth: <?php echo $params->get('slideWidth','800');?>,
+			pause: <?php echo $params->get('pause','4000');?>,
+			speed: <?php echo $params->get('speed','500');?>,
 			preloadImages: 'visible'
         });
     });
