@@ -8,13 +8,13 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>mod_eiko_slider</name>
 	<author>Ralf Meyer</author>
-	<creationDate>19.11.15</creationDate>
-	<copyright>Copyright (c) 2015 EINSATZKOMPONENTE.DE. All rights reserved.</copyright>
+	<creationDate>2016-12-28</creationDate>
+	<copyright>Copyright (c) 2016 EINSATZKOMPONENTE.DE. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
 	<authorUrl>einsatzkomponente.de</authorUrl>
-	<version>1.0.4</version>
-	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>Imageslider_Modul für J3.x</b></span><br/><br/><span style="font-size:10px;"></span>Das Modul zur Anzeige der letzten X Einsätze aus der Einsatzkomponente für J3<br/><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="http://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
+	<version>1.0.5</version>
+	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>Imageslider_Modul für J3.x</b></span><br/><br/><span style="font-size:10px;"></span>Das Modul zur Anzeige der letzten X Einsätze aus der Einsatzkomponente für J3<br/><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="https://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
 	]]></description>
 
 	<files>
@@ -201,7 +201,7 @@
 <!-- UPDATESERVER DEFINITION -->
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="extension" priority="1" name="mod_eiko_slider">http://www.feuerwehr-veenhusen.de/update/com_einsatzkomponente-update.xml</server>
+		<server type="extension" priority="1" name="mod_eiko_slider">https://www.feuerwehr-veenhusen.de/update/mod_eiko_slider-update.xml</server>
 	</updateservers>
 	
 </extension>
